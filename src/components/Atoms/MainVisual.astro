@@ -1,0 +1,27 @@
+---
+import pcImage from '../../assets/images/pc_main-visual.jpg';
+import pcImage2x from '../../assets/images/pc_main-visual@2x.jpg';
+import pcImageWebp from '../../assets/images/pc_main-visual.webp';
+import pcImageWebp2x from '../../assets/images/pc_main-visual@2x.webp';
+import spImage from '../../assets/images/sp_main-visual.jpg';
+import spImageWebp from '../../assets/images/sp_main-visual.webp';
+
+const pcSrcset = `${pcImageWebp2x} 1x, ${pcImage2x} 2x`
+const pcWebpSrcset = `${pcImageWebp} 1x, ${pcImageWebp2x} 2x`
+---
+<div class="main-visual">
+  <picture>
+    <source media="(max-width: 767px)" type="image/webp" srcset={spImageWebp}>
+    <source media="(max-width: 767px)" srcset={spImage}>
+    <source type="image/webp" src={pcImageWebp} srcset={pcWebpSrcset}>
+    <img src={pcImage} srcset={pcSrcset} alt="">
+  </picture>
+</div>
+
+<style lang="scss">
+  .main-visual {
+    img {
+      width: 100%;
+    }
+  }
+</style>

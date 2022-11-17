@@ -13,5 +13,8 @@
   "dependencies": {
     "@astrojs/vercel": "^2.3.3",
     "astro": "^1.6.8"
+  },
+  "devDependencies": {
+    "sass": "^1.56.1"
   }
 }

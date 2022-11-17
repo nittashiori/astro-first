@@ -1,0 +1,33 @@
+---
+import Logo from '../Atoms/Logo.astro';
+---
+
+<header class="header">
+  <a href="/" class="header__logo">
+    <Logo />
+  </a>
+</header>
+
+<style lang="scss">
+.header {
+  width: 100%;
+  padding: 50px;
+  background: var(--color-white);
+
+  @media screen and (max-width: 767px) {
+    padding: 30px;
+  }
+
+  &__logo {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    margin: auto;
+    color: var(--color-text);
+    
+    @media screen and (max-width: 767px) {
+      max-width: 160px;
+    }
+  }
+}
+</style>

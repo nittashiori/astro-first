@@ -1,0 +1,32 @@
+<nav class="nav">
+  <ul class="nav__list">
+    <li><a class="nav__link" href="/menu">menu</a></li>
+    <li><a class="nav__link" href="/blog">blog</a></li>
+    <li><a class="nav__link" href="/access">access</a></li>
+  </ul>
+</nav>
+
+<style lang="scss">
+  .nav {
+    width: 100%;
+
+    &__list {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__link {
+      display: block;
+      padding: 40px;
+      transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+      @media screen and (max-width: 767px) {
+        padding: 30px 25px;
+      }
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+</style>

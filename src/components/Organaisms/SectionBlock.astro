@@ -1,0 +1,87 @@
+---
+export interface Props {
+	image: string;
+  imageWebp: string;
+	titleEn?: string;
+	titleJp: string;
+  text: string;
+}
+
+const { image, imageWebp, titleEn, titleJp, text } = Astro.props;
+---
+
+<section class="section-block">
+  <picture class="section-block__image">
+    <source srcset={imageWebp} type="image/webp">
+    <img src={image} alt="" class="image">
+  </picture>
+  <div class="section-block__body">
+    <h2 class="title">
+      <span class="title__en">{titleEn}</span>
+      <span class="title__jp">{titleJp}</span>
+    </h2>
+    <p class="text">
+      {text}
+    </p>
+  </div>
+</section>
+
+<style lang="scss">
+  .section-block {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+
+    @media screen and (max-width: 767px) {
+      grid-template-columns: auto;
+      grid-template-rows: max-content minmax(0, 1fr);
+    }
+
+    &__body {
+      display: grid;
+      gap: 40px;
+      padding: 0 40px;
+
+      @media screen and (max-width: 767px) {
+        padding: 30px 0;
+      }
+    }
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .title {
+    display: grid;
+    gap: 25px;
+
+    &__en {
+      font-size: 1.6rem;
+
+      @media screen and (max-width: 767px) {
+        font-size: 1.5rem;
+      }
+    }
+
+    &__jp {
+      font-size: 3.2rem;
+      color: var(--color-primary);
+      font-weight: bold;
+
+      @media screen and (max-width: 767px) {
+        font-size: 2.6rem;
+      }
+    }
+  }
+
+  .text {
+    margin-top: calc(-1 * var(--font-size-pc));
+    line-height: 1.75;
+    white-space: pre-line;
+
+    @media screen and (max-width: 767px) {
+      margin-top: calc(-1 * var(--font-size-sp));
+    }
+  }
+</style>

@@ -3,6 +3,10 @@ import DefaultLayout from '../layouts/DefaultLayout.astro';
 
 import MainVisual from '../components/Atoms/MainVisual.astro';
 import Nav from '../components/Molecules/Nav.astro';
+import SectionBlock from '../components/Organaisms/SectionBlock.astro';
+
+import imageConcept from '../assets/images/concept.jpg';
+import imageWebpConcept from '../assets/images/concept.webp';
 ---
 
 <DefaultLayout
@@ -12,5 +16,28 @@ import Nav from '../components/Molecules/Nav.astro';
 >
 	<MainVisual />
 	<Nav />
+	<div class="contents">
+		<SectionBlock
+			image={imageConcept}
+			imageWebp={imageWebpConcept}
+			titleEn="Concept"
+			titleJp="心静かにコーヒーを"
+			text="立ち止まって、\n空の青さを眺めて、\n一息つきましょう"
+		/>
+	</div>
 	<p>test</p>
 </DefaultLayout>
+
+<style lang="scss">
+	.contents {
+		width: 100%;
+		max-width: 1110px;
+		margin: auto;
+		padding: 50px 20px;
+		box-sizing: border-box;
+
+		@media screen and (max-width: 767px) {
+			max-width: 100%;
+		}
+	}
+</style>

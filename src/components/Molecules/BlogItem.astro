@@ -1,0 +1,61 @@
+---
+export interface Props {
+  link: string;
+  image: string;
+  image2x: string;
+  imageWebp: string;
+  imageWebp2x: string;
+  title: string;
+  data: string;
+}
+
+const { link, image, image2x, imageWebp, imageWebp2x, title, data } = Astro.props;
+
+const Srcset = `${image} 1x, ${image2x} 2x`
+const WebpSrcset = `${imageWebp} 1x, ${imageWebp2x} 2x`
+---
+
+<div class="blog-item">
+  <a href={link} class="blog-item__link">
+    <div class="blog-item__eyecatch">
+      <picture>
+        <source type="image/webp" src={imageWebp} srcset={WebpSrcset}>
+        <img src={image} srcset={Srcset} alt="">
+      </picture>
+    </div>
+    <div class="blog-item__body">
+      <p class="blog-item__title">{title}</p>
+      <p class="blog-item__data">{data}</p>
+    </div>
+  </a>
+</div>
+
+<style lang="scss">
+  .blog-item {
+    width: 100%;
+    &__link {
+      display: grid;
+      gap: 20px;
+    }
+
+    &__body {
+      display: grid;
+      gap: 10px;
+    }
+
+    &__eyecatch {
+      img {
+        width: 100%;
+      }
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    &__data {
+      font-size: 1.2rem;
+    }
+  }
+</style>

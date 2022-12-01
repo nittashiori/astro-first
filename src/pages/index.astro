@@ -5,9 +5,14 @@ import MainVisual from '../components/Atoms/MainVisual.astro';
 import Nav from '../components/Molecules/Nav.astro';
 import SectionBlock from '../components/Organaisms/SectionBlock.astro';
 import SectionTitle from "../components/Atoms/SectionTitle.astro"
+import BlogItem from "../components/Molecules/BlogItem.astro"
 
-import imageConcept from '../assets/images/concept.jpg';
-import imageWebpConcept from '../assets/images/concept.webp';
+import ImageConcept from '../assets/images/concept.jpg';
+import ImageWebpConcept from '../assets/images/concept.webp';
+import ImageBlog01 from '../assets/images/thumbnail01.jpg';
+import ImageBlog2x01 from '../assets/images/thumbnail01@2x.jpg';
+import ImageWebpBlog01 from '../assets/images/thumbnail01.webp';
+import ImageWebp2xBlog01 from '../assets/images/thumbnail01@2x.webp';
 ---
 
 <DefaultLayout
@@ -19,8 +24,8 @@ import imageWebpConcept from '../assets/images/concept.webp';
 	<Nav />
 	<div class="contents">
 		<SectionBlock
-			image={imageConcept}
-			imageWebp={imageWebpConcept}
+			image={ImageConcept}
+			imageWebp={ImageWebpConcept}
 			titleEn="Concept"
 			titleJp="心静かにコーヒーを"
 			text="立ち止まって、\n空の青さを眺めて、\n一息つきましょう"
@@ -29,6 +34,15 @@ import imageWebpConcept from '../assets/images/concept.webp';
 			element="h2"
 			titleEn="blog"
 			titleJp="ブログ"
+		/>
+		<BlogItem
+			link="#"
+			image={ImageBlog01}
+			image2x={ImageBlog2x01}
+			imageWebp={ImageWebpBlog01}
+			imageWebp2x={ImageWebp2xBlog01}
+			title="コーヒーカー始めました。"
+			data="2030.08.08"
 		/>
 	</div>
 	<p>test</p>

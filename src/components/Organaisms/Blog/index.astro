@@ -1,0 +1,26 @@
+---
+import SectionTitle from "../../Atoms/SectionTitle.astro"
+import BlogList from "../../Organaisms/BlogList/index.astro"
+import Button from '../../Atoms/Button/index.astro';
+---
+<section class="section-blog">
+  <SectionTitle
+    element="h2"
+    titleEn="blog"
+    titleJp="ブログ"
+  />
+  <BlogList />
+  <Button
+    element="a"
+    href="#"
+    label="ブログ一覧"
+  />
+</section>
+
+<style lang="scss">
+  .section-blog {
+    display: grid;
+    gap: 30px;
+    justify-items: center;
+  }
+</style>

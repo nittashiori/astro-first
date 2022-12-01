@@ -1,0 +1,51 @@
+---
+export interface Props {
+  element: string;
+  href?: string;
+  label: string;
+}
+
+const { element, href, label } = Astro.props;
+
+const Element = element
+---
+
+<Element class="button" href={href}>
+  {label}
+  <svg xmlns="http://www.w3.org/2000/svg" width="5" height="9" viewBox="0 0 5 9">
+    <path id="icon_arrow-right" d="M3.757.826a1,1,0,0,1,1.487,0L7.5,3.331A1,1,0,0,1,6.755,5H2.245A1,1,0,0,1,1.5,3.331Z" transform="translate(5) rotate(90)"/>
+  </svg>  
+</Element>
+
+<style lang="scss">
+  .button {
+    display: inline-block;
+    width: 100%;
+    max-width: 220px;
+    padding: 18px 15px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-white);
+    border-radius: 3px;
+    position: relative;
+    transition: all var(--default-transition);
+
+    &:hover {
+      color: var(--color-white);
+      background: var(--color-primary);
+    }
+
+    svg {
+      width: 5px;
+      height: 9px;
+      fill: currentColor;
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+    }
+  }
+</style>

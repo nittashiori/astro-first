@@ -3,7 +3,7 @@ import DefaultLayout from '../layouts/DefaultLayout.astro';
 
 import MainVisual from '../components/Atoms/MainVisual.astro';
 import Nav from '../components/Molecules/Nav.astro';
-import SectionBlock from '../components/Organaisms/SectionBlock.astro';
+import Concept from '../components/Organaisms/Concept/index.astro';
 import Blog from '../components/Organaisms/Blog/index.astro';
 
 import ImageConcept from '../assets/images/concept.jpg';
@@ -18,7 +18,7 @@ import ImageWebpConcept from '../assets/images/concept.webp';
 	<MainVisual />
 	<Nav />
 	<div class="contents">
-		<SectionBlock
+		<Concept
 			image={ImageConcept}
 			imageWebp={ImageWebpConcept}
 			titleEn="Concept"

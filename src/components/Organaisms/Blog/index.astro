@@ -1,9 +1,10 @@
 ---
+import Section from "../../Atoms/Section/index.astro"
 import SectionTitle from "../../Atoms/SectionTitle.astro"
 import BlogList from "../../Organaisms/BlogList/index.astro"
 import Button from '../../Atoms/Button/index.astro';
 ---
-<section class="section-blog">
+<Section>
   <SectionTitle
     element="h2"
     titleEn="blog"
@@ -15,12 +16,4 @@ import Button from '../../Atoms/Button/index.astro';
     href="#"
     label="ブログ一覧"
   />
-</section>
-
-<style lang="scss">
-  .section-blog {
-    display: grid;
-    gap: 30px;
-    justify-items: center;
-  }
-</style>
+</Section>

@@ -5,14 +5,14 @@ import MainVisual from '../components/Atoms/MainVisual.astro';
 import Nav from '../components/Molecules/Nav.astro';
 import SectionBlock from '../components/Organaisms/SectionBlock.astro';
 import SectionTitle from "../components/Atoms/SectionTitle.astro"
-import BlogItem from "../components/Molecules/BlogItem.astro"
+import BlogList from "../components/Organaisms/BlogList/index.astro"
 
 import ImageConcept from '../assets/images/concept.jpg';
 import ImageWebpConcept from '../assets/images/concept.webp';
-import ImageBlog01 from '../assets/images/thumbnail01.jpg';
-import ImageBlog2x01 from '../assets/images/thumbnail01@2x.jpg';
-import ImageWebpBlog01 from '../assets/images/thumbnail01.webp';
-import ImageWebp2xBlog01 from '../assets/images/thumbnail01@2x.webp';
+// import ImageBlog01 from '../assets/images/thumbnail01.jpg';
+// import ImageBlog2x01 from '../assets/images/thumbnail01@2x.jpg';
+// import ImageWebpBlog01 from '../assets/images/thumbnail01.webp';
+// import ImageWebp2xBlog01 from '../assets/images/thumbnail01@2x.webp';
 ---
 
 <DefaultLayout
@@ -30,26 +30,22 @@ import ImageWebp2xBlog01 from '../assets/images/thumbnail01@2x.webp';
 			titleJp="心静かにコーヒーを"
 			text="立ち止まって、\n空の青さを眺めて、\n一息つきましょう"
 		/>
-		<SectionTitle
-			element="h2"
-			titleEn="blog"
-			titleJp="ブログ"
-		/>
-		<BlogItem
-			link="#"
-			image={ImageBlog01}
-			image2x={ImageBlog2x01}
-			imageWebp={ImageWebpBlog01}
-			imageWebp2x={ImageWebp2xBlog01}
-			title="コーヒーカー始めました。"
-			data="2030.08.08"
-		/>
+		<section>
+			<SectionTitle
+				element="h2"
+				titleEn="blog"
+				titleJp="ブログ"
+			/>
+			<BlogList />
+		</section>
 	</div>
 	<p>test</p>
 </DefaultLayout>
 
 <style lang="scss">
 	.contents {
+		display: grid;
+		gap: 100px;
 		width: 100%;
 		max-width: 1110px;
 		margin: auto;
@@ -57,6 +53,7 @@ import ImageWebp2xBlog01 from '../assets/images/thumbnail01@2x.webp';
 		box-sizing: border-box;
 
 		@media screen and (max-width: 767px) {
+			gap: 70px;
 			max-width: 100%;
 		}
 	}

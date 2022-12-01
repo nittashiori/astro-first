@@ -1,0 +1,33 @@
+---
+import BlogItem from "../../Molecules/BlogItem.astro"
+
+import { lists } from './data';
+---
+
+<div class="blog-list">
+  {lists.map(list => (
+    <BlogItem
+      link={list.link}
+      image={list.image}
+      image2x={list.image2x}
+      imageWebp={list.imageWebp}
+      imageWebp2x={list.imageWebp2x}
+      title={list.title}
+      data={list.data}
+    />
+  ))}
+</div>
+
+<style lang="scss">
+  .blog-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @media screen and (max-width: 767px) {
+      grid-template-columns: auto;
+      grid-template-rows: 1fr;
+      gap: 20px;
+    }
+  }
+</style>

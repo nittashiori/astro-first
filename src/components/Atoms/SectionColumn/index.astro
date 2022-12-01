@@ -1,0 +1,25 @@
+---
+export interface Props {
+  pcColumn?: string;
+  spColumn?: string;
+}
+
+const { pcColumn, spColumn } = Astro.props;
+---
+
+<section class="section-column">
+  <slot />
+</section>
+
+<style lang="scss" define:vars={{ pcColumn, spColumn }}>
+  .section-column {
+    display: grid;
+    grid-template-columns: repeat(var(--pcColumn), 1fr);
+    align-items: center;
+
+    @media screen and (max-width: 767px) {
+      grid-template-columns: repeat(var(--spColumn), 1fr);
+      grid-template-rows: max-content minmax(0, 1fr);
+    }
+  }
+</style>

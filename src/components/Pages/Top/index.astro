@@ -1,0 +1,38 @@
+---
+import MainVisual from '../../Atoms/MainVisual.astro';
+import Nav from '../../Molecules/Nav.astro';
+import Concept from '../../Organaisms/Concept/index.astro';
+import Blog from '../../Organaisms/Blog/index.astro';
+
+import ImageConcept from './src/assets/images/concept.jpg';
+import ImageWebpConcept from './src/assets/images/concept.webp';
+---
+<MainVisual />
+<Nav />
+<div class="contents">
+  <Concept
+    image={ImageConcept}
+    imageWebp={ImageWebpConcept}
+    titleEn="Concept"
+    titleJp="心静かにコーヒーを"
+    text="立ち止まって、\n空の青さを眺めて、\n一息つきましょう"
+  />
+  <Blog />
+</div>
+
+<style lang="scss">
+	.contents {
+		display: grid;
+		gap: 100px;
+		width: 100%;
+		max-width: 1110px;
+		margin: auto;
+		padding: 50px 20px;
+		box-sizing: border-box;
+
+		@media screen and (max-width: 767px) {
+			gap: 70px;
+			max-width: 100%;
+		}
+	}
+</style>
